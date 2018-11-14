@@ -86,11 +86,14 @@ public class customerservlet extends HttpServlet{
                 {
                     pw.printf(ex.getMessage());
                 } 
-                response.setStatus(HttpServletResponse.SC_ACCEPTED);
+                  return;
+            }
+        
+        response.setStatus(HttpServletResponse.SC_ACCEPTED);
         response.setContentType("text/plain");
         try (PrintWriter pw = response.getWriter()) {
             pw.printf("Customer created");                
-        }
+        
         }
         
     }
