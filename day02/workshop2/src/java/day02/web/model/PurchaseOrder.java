@@ -32,7 +32,7 @@ import javax.persistence.Transient;
 @NamedQueries({
     @NamedQuery(
         name="PurchaseOrder.findByCustomerId", 
-        query="select POS from PurchaseOrder pos join pos.customer c where c.customerId = :custId"
+        query="select pos from PurchaseOrder pos join pos.customer c where c.customerId = :custId"
         ),
         @NamedQuery(
                 name = "PurchaseOrder.findByOrderNum",

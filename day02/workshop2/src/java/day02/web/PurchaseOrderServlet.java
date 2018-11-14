@@ -8,8 +8,10 @@ package day02.web;
 import day02.web.model.PurchaseOrder;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.List;
 import javax.json.Json;
+import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,6 +21,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -56,9 +59,24 @@ public class PurchaseOrderServlet extends HttpServlet {
        for (PurchaseOrder po:result){
            builder.add(po.toJson());
        }
+       JsonArray w=builder.build();
        
        response.setStatus(HttpServletResponse.SC_OK);
-       
+        response.setContentType(MediaType.TEXT_HTML);
+                try (PrintWriter pw = response.getWriter())
+                {
+                     pw.println("<hr>");
+                    
+                      for(int i = 0; i < w.size();i++) {
+                                pw.println(w.get(0).toString());
+                                 pw.println("<HR>");
+                                pw.println(w.get(1).toString());
+                                pw.println(w.get(2).toString());
+                                pw.println("<HR>");
+                        }
+                      pw.println("<HR>");
+        }
+                
     }
 
     /**
