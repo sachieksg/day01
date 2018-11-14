@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Customer Query and crud with ejb</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Customer</h1>
+        <form method="GET" action="customer">
+            Customer ID: 
+            <input type="number" name="customerId" placeholder="Please tner the customer id to search">
+            <button type="submit">search</button>
+            
+            
+          
+        </form>
+         <hr>
+          
+           <h1>Insert new Customer </h1> 
+           <form method="POST" action="customer">
+               <table>
+                   <tr>
+                       <td>  Customer ID </td>
+                       <td> <input type="text" name="customerid"> </td>
+                   </tr>
+                   <tr>
+                       <td>  name </td>
+                       <td> <input type="text" name="name"> </td>
+                   </tr>
+                   <tr>
+                       <td>  address line1 </td>
+                       <td> <input type="text" name="addressline1"> </td>
+                   </tr>
+                    <tr>
+                       <td>  address line2 </td>
+                       <td> <input type="text" name="addressline2"> </td>
+                   </tr>
+                   <tr>
+                       <td>  phone </td>
+                       <td> <input type="text" name="phone"> </td>
+                   </tr>
+                   <tr>
+                       <td>  email </td>
+                       <td> <input type="text" name="email"> </td>
+                   </tr>
+                   <tr>
+                       <td>  zip </td>
+                       <td> <input type="text" name="zip"> </td>
+                   </tr>
+                   <tr>
+                       <td>  city </td>
+                       <td> <input type="text" name="city"> </td>
+                   </tr>
+                   <tr>
+                       <td>  State </td>
+                       <td> <input type="text" name="state" size="2"> </td>
+                   </tr>
+                   <tr>
+                       <td>  fax </td>
+                       <td> <input type="text" name="fax"> </td>
+                   </tr>
+                   <tr>
+                       <td>  credit limit </td>
+                       <td> <input type="text" name="creditlimit"> </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           Discount Code
+                       </td>
+                       <td>
+                           <select name="discountcode">
+                                <option value="H">H</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="N">N</option>
+                           </select>
+                       </td>
+                        
+                   </tr>
+                    
+               </table>
+               <BR> &nbsp;
+               <hr>
+                <button type="submit">Insert Customer</button>  
+                <hr>
+           </form>
+    </body>
+</html>
